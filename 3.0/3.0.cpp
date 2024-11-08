@@ -32,7 +32,38 @@ public:
         cout << "Enter a new age for student: " << endl;
         cin >> this->age;
     }
+
+    string getName(){
+        return this -> name;
+    }
+
+    int getAge() {
+        return this -> age;
+    }
+
+    void setName() {
+        this->name = name;
+    }
+
+    void setAge() {
+        this->age = age;
+    }
 };
+
+class Group {
+    Student* students;
+    int amountOfStudent;
+public:
+    Group() {
+        amountOfStudent = 1;
+        students = new Student[amountOfStudent];
+    }
+
+    ~Group() {
+        delete[] students;
+        students = nullptr;
+    }
+}; 
 
 int main()
 {
